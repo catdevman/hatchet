@@ -44,7 +44,7 @@ changelog:
       - "^test:"
       - "^chore:"
 
-brews:
+homebrew_casks:
   - repository:
       owner: catdevman
       name: homebrew-tap
@@ -52,10 +52,6 @@ brews:
     description: >-
       Single-binary accessibility testing CLI (pa11y/pa11y-ci replacement)
       powered by axe-core and headless Chrome
-    install: |
-      bin.install "hatchet"
-    test: |
-      system "#{bin}/hatchet", "--version"
     caveats: |
       hatchet needs a Chrome/Chromium browser. If none is installed, run:
         hatchet browser install
