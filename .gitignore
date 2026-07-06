@@ -1,0 +1,4 @@
+/hatchet
+/dist/
+*.test
+coverage.out
