@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# MISE description="Remove build artifacts"
+
+rm -rf hatchet dist/ hatchet_output.txt pa11y_output.txt

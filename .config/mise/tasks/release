@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# MISE description="Run a local snapshot release"
+
+goreleaser release --snapshot --clean

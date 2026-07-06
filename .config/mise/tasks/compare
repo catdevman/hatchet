@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# MISE description="Compare pa11y-ci with hatchet on a target"
+
+if [ -z "$TARGET" ]; then
+  echo "Usage: make compare TARGET=<url>"
+  exit 1
+fi
+
+echo "Running hatchet..."
+./hatchet "$TARGET" > hatchet_output.txt || true
+
+echo "Running pa11y-ci..."
+npx --yes pa11y-ci --config testdata/.pa11yci "$TARGET" > pa11y_output.txt || true
+
+echo "Comparison complete! Check hatchet_output.txt and pa11y_output.txt for differences."

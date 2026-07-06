@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# MISE description="Install the headless chrome browser used by hatchet"
+
+go run ./cmd/hatchet browser install
