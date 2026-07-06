@@ -271,7 +271,7 @@ config files.
 **Distribution (v1 floor):**
 - goreleaser: signed-off, reproducible cross-platform binaries
   (linux/macos/windows, amd64/arm64) on tagged releases.
-- Homebrew tap (`brew install catdevman/tap/hatchet`).
+- Homebrew tap (`brew install catdevman/tools/hatchet`).
 
 **Later (explicitly deferred, tracked as post-v1 items):**
 - Official Docker image with `chrome-headless-shell` baked in.

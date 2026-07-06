@@ -24,7 +24,7 @@ $ echo $?
 ## Install
 
 ```sh
-brew install catdevman/tap/hatchet     # Homebrew
+brew install catdevman/tools/hatchet     # Homebrew
 go install github.com/catdevman/hatchet/cmd/hatchet@latest
 ```
 

@@ -17,7 +17,7 @@ agent, model, or human can pick up where the last one left off.
 - **Last updated:** 2026-07-05
 - **Current milestone:** 4 (Ship) — **COMPLETE except** the manual
   pa11y-ci parity suite (needs Node) and the actual first release (tag +
-  goreleaser run + creating the homebrew-tap repo). Milestones 1–3 complete.
+  goreleaser run + creating the homebrew-tools repo). Milestones 1–3 complete.
 - **State:** Feature-complete v1 per HLD. All tests pass (`go build` /
   `go vet` / `go test ./...`) including integration tests for concurrency,
   scoping, actions, environment knobs, and the static renderer. E2E-verified
@@ -27,7 +27,7 @@ agent, model, or human can pick up where the last one left off.
   passes; corrupted pin rejected). Nothing committed to git yet.
 - **Works right now:** the full HLD §10 CLI surface.
 - **Next up (release checklist):** (1) initial git commit; (2) push to
-  github.com/catdevman/hatchet; (3) create catdevman/homebrew-tap repo;
+  github.com/catdevman/hatchet; (3) create catdevman/homebrew-tools repo;
   (4) `goreleaser check` + `goreleaser release --snapshot --clean` locally;
   (5) run the manual pa11y-ci parity comparison; (6) tag v0.1.0 and release;
   (7) decide the repo's own license (post-v1 list). Post-v1: Docker image,
@@ -118,10 +118,10 @@ agent, model, or human can pick up where the last one left off.
 ## Milestone 4 — Ship
 
 - [x] goreleaser config (linux/macos/windows × amd64/arm64, ldflags version,
-      brews → catdevman/homebrew-tap) — **config written but not exercised**:
+      brews → catdevman/homebrew-tools) — **config written but not exercised**:
       run `goreleaser check` + `--snapshot` before the first real release
 - [x] Homebrew tap (via goreleaser `brews`; requires creating the
-      catdevman/homebrew-tap repo on GitHub)
+      catdevman/homebrew-tools repo on GitHub)
 - [x] Static renderer (`--renderer static`) — implemented as
       script-execution-disabled navigation (see Decisions Log), integration
       test proves page JS is skipped while axe still runs

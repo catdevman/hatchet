@@ -47,7 +47,7 @@ changelog:
 homebrew_casks:
   - repository:
       owner: catdevman
-      name: homebrew-tap
+      name: homebrew-tools
     homepage: https://github.com/catdevman/hatchet
     description: >-
       Single-binary accessibility testing CLI (pa11y/pa11y-ci replacement)
