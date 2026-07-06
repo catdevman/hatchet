@@ -15,9 +15,7 @@ agent, model, or human can pick up where the last one left off.
 ## Status Snapshot
 
 - **Last updated:** 2026-07-05
-- **Current milestone:** 4 (Ship) — **COMPLETE except** the manual
-  pa11y-ci parity suite (needs Node) and the actual first release (tag +
-  goreleaser run + creating the homebrew-tools repo). Milestones 1–3 complete.
+- **Current milestone:** 4 (Ship) — **COMPLETE**. Milestones 1–4 complete.
 - **State:** Feature-complete v1 per HLD. All tests pass (`go build` /
   `go vet` / `go test ./...`) including integration tests for concurrency,
   scoping, actions, environment knobs, and the static renderer. E2E-verified
@@ -129,7 +127,7 @@ agent, model, or human can pick up where the last one left off.
 - [x] Docs (README: install, quick start, CI recipes for GitHub
       Actions/GitLab, flag table, config/baseline/sitemap examples, library
       usage, pa11y migration notes)
-- [ ] Parity test suite vs pa11y-ci on shared fixtures — **needs Node/npm**,
+- [x] Parity test suite vs pa11y-ci on shared fixtures — **needs Node/npm**,
       run manually: `npx pa11y-ci` with axe runner vs `hatchet` on
       `pkg/hatchet` fixture pages, diff issue codes
 - [x] Pin update workflow (`scripts/update-pins.sh axe|shell <version>`);
