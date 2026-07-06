@@ -44,14 +44,3 @@ changelog:
       - "^test:"
       - "^chore:"
 
-homebrew_casks:
-  - repository:
-      owner: catdevman
-      name: homebrew-tools
-    homepage: https://github.com/catdevman/hatchet
-    description: >-
-      Single-binary accessibility testing CLI (pa11y/pa11y-ci replacement)
-      powered by axe-core and headless Chrome
-    caveats: |
-      hatchet needs a Chrome/Chromium browser. If none is installed, run:
-        hatchet browser install
