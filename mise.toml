@@ -23,16 +23,16 @@ run = "rm -rf hatchet dist/ hatchet_output.txt pa11y_output.txt"
 description = "Compare pa11y-ci with hatchet on a target"
 run = '''
 #!/usr/bin/env bash
-if [ -z "$1" ]; then
-  echo "Usage: mise run compare <url>"
+if [ -z "$TARGET" ]; then
+  echo "Usage: make compare TARGET=<url>"
   exit 1
 fi
 
 echo "Running hatchet..."
-./hatchet "$1" > hatchet_output.txt || true
+./hatchet "$TARGET" > hatchet_output.txt || true
 
 echo "Running pa11y-ci..."
-npx --yes pa11y-ci --runner axe "$1" > pa11y_output.txt || true
+npx --yes pa11y-ci --runner axe "$TARGET" > pa11y_output.txt || true
 
 echo "Comparison complete! Check hatchet_output.txt and pa11y_output.txt for differences."
 '''

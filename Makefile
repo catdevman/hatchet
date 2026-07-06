@@ -1,23 +1,7 @@
-.PHONY: build test release clean compare browser-install
+.DEFAULT_GOAL := help
 
-build:
-	mise run build
+help:
+	@mise tasks
 
-test:
-	mise run test
-
-release:
-	mise run release
-
-clean:
-	mise run clean
-
-compare:
-	@if [ -z "$(TARGET)" ]; then \
-		echo "Usage: make compare TARGET=<url>"; \
-		exit 1; \
-	fi
-	mise run compare $(TARGET)
-
-browser-install:
-	mise run browser-install
+%:
+	@mise run $@
