@@ -1,0 +1,42 @@
+[tools]
+go = "1.26.4"
+node = "20"
+goreleaser = "latest"
+
+[tasks.build]
+description = "Build the hatchet binary"
+run = "go build -o hatchet ./cmd/hatchet"
+
+[tasks.test]
+description = "Run all Go tests"
+run = "go test ./..."
+
+[tasks.release]
+description = "Run a local snapshot release"
+run = "goreleaser release --snapshot --clean"
+
+[tasks.clean]
+description = "Remove build artifacts"
+run = "rm -rf hatchet dist/ hatchet_output.txt pa11y_output.txt"
+
+[tasks.compare]
+description = "Compare pa11y-ci with hatchet on a target"
+run = '''
+#!/usr/bin/env bash
+if [ -z "$1" ]; then
+  echo "Usage: mise run compare <url>"
+  exit 1
+fi
+
+echo "Running hatchet..."
+./hatchet "$1" > hatchet_output.txt || true
+
+echo "Running pa11y-ci..."
+npx --yes pa11y-ci --runner axe "$1" > pa11y_output.txt || true
+
+echo "Comparison complete! Check hatchet_output.txt and pa11y_output.txt for differences."
+'''
+
+[tasks.browser-install]
+description = "Install the headless chrome browser used by hatchet"
+run = "go run ./cmd/hatchet browser install"
